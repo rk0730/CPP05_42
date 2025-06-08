@@ -1,9 +1,9 @@
 #include "Bureaucrat.hpp"
-#include <exception>
 #include <iostream>
 
 int main(void)
 {
+	std::cout << "case 1" << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Alice", 50);
@@ -15,6 +15,7 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
+	std::cout << "case 2" << std::endl;
 	try
 	{
 		Bureaucrat bureaucrat("Bob", 0);
@@ -27,7 +28,8 @@ int main(void)
 		std::cerr << e.what() << std::endl;
 	}
 
-		try
+	std::cout << "case 3" << std::endl;
+	try
 	{
 		Bureaucrat bureaucrat("Charlie", 0);
 		bureaucrat.decrementGrade();
