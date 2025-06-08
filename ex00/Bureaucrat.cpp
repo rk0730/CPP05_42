@@ -22,7 +22,6 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
 {
 	if (this != &other)
 	{
-		_name = other.getName();
 		_grade = other.getGrade();
 	}
 	return *this;
