@@ -7,14 +7,21 @@ int main(void)
 	std::cout << "case 1" << std::endl;
 	try
 	{
-		Bureaucrat bureaucrat("Alice", 50);
+		Bureaucrat defaultBureaucrat("default", 150);
+		Bureaucrat bureaucrat("Alice", 137);
 		ShrubberyCreationForm form("home");
+		std::cout << defaultBureaucrat << std::endl;
 		std::cout << bureaucrat << std::endl;
+		std::cout << form << std::endl;
+		bureaucrat.executeForm(form);
+		defaultBureaucrat.signForm(form);
 		std::cout << form << std::endl;
 		bureaucrat.signForm(form);
 		std::cout << form << std::endl;
 		bureaucrat.executeForm(form);
-		std::cout << "Shrubbery creation form executed successfully." << std::endl;
+		bureaucrat.decrementGrade();
+		std::cout << bureaucrat << std::endl;
+		bureaucrat.executeForm(form);
 	}
 	catch (std::exception &e)
 	{
