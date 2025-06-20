@@ -6,6 +6,7 @@ SRCS += $(SRCDIR)/main.cpp
 SRCS += $(SRCDIR)/Bureaucrat.cpp
 SRCS += $(SRCDIR)/AForm.cpp
 SRCS += $(SRCDIR)/ShrubberyCreationForm.cpp
+SRCS += $(SRCDIR)/RobotomyRequestForm.cpp
 
 OBJDIR := objs
 OBJS = $(SRCS:$(SRCDIR)/%.cpp=$(OBJDIR)/%.o)

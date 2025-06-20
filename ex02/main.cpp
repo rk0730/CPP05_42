@@ -1,9 +1,13 @@
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 int main(void)
 {
+	srand(time(NULL));
 	std::cout << "case 1" << std::endl;
 	try
 	{
@@ -31,6 +35,16 @@ int main(void)
 	std::cout << "case 2" << std::endl;
 	try
 	{
+		Bureaucrat bureaucrat("Bob", 4);
+		RobotomyRequestForm form("target");
+		std::cout << bureaucrat << std::endl;
+		std::cout << form << std::endl;
+		bureaucrat.signForm(form);
+		std::cout << form << std::endl;
+		for (int i = 0; i < 10; ++i)
+		{
+			bureaucrat.executeForm(form);
+		}
 	}
 	catch (std::exception &e)
 	{
