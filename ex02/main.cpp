@@ -1,9 +1,10 @@
 #include "Bureaucrat.hpp"
-#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
-#include <iostream>
+#include "ShrubberyCreationForm.hpp"
 #include <cstdlib>
 #include <ctime>
+#include <iostream>
 
 int main(void)
 {
@@ -45,6 +46,22 @@ int main(void)
 		{
 			bureaucrat.executeForm(form);
 		}
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+
+	std::cout << "case 3" << std::endl;
+	try
+	{
+		Bureaucrat bureaucrat("Charlie", 1);
+		PresidentialPardonForm form("target");
+		std::cout << bureaucrat << std::endl;
+		std::cout << form << std::endl;
+		bureaucrat.signForm(form);
+		std::cout << form << std::endl;
+		bureaucrat.executeForm(form);
 	}
 	catch (std::exception &e)
 	{
