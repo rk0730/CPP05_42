@@ -4,7 +4,8 @@
 
 class AForm;
 
-class Intern {
+class Intern
+{
 public:
 	Intern();
 	Intern(const Intern &other);
@@ -12,9 +13,9 @@ public:
 	~Intern();
 
 	AForm *makeForm(const std::string &formName, const std::string &target) const;
+
 private:
 	static const std::string formNames[3];
 };
-
 
 #endif

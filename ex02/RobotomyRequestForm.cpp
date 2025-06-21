@@ -45,4 +45,3 @@ void RobotomyRequestForm::execute(const Bureaucrat &executor) const
 		std::cout << "Robotomy failed for " << getName() << "!" << std::endl;
 	}
 }
-
