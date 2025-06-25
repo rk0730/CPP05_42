@@ -1,5 +1,6 @@
 CXX := c++
-CFLAGS := -std=c++98 -Wall -Wextra -Werror
+CXXFLAGS := -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS := -MMD -MP
 
 SRCDIR := .
 SRCS += $(SRCDIR)/main.cpp
@@ -14,10 +15,10 @@ NAME = a.out
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	$(CXX) $(CFLAGS) -o $@ $^
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
 $(OBJDIR)/%.o: $(SRCDIR)/%.cpp | $(OBJDIR)
-	$(CXX) $(CFLAGS) -c -MMD -MP $< -o $@
+	$(CXX) $(CXXFLAGS) $(CPPFLAGS) -c $< -o $@
 
 $(OBJDIR):
 	mkdir -p $(OBJDIR)
